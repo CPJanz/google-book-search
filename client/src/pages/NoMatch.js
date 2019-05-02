@@ -1,7 +1,10 @@
+// Javascript file handling the no match route.
+//Components
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 
+// Functional component (stateless)
 function NoMatch() {
   return (
     <Container fluid>

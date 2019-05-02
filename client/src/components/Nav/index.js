@@ -22,10 +22,13 @@ class Nav extends Component {
     this.setState({ open: !this.state.open });
   };
 
+  // This triggers right before the component first is rendered
   componentDidMount() {
+    // Adds a listener to the window which waits for the window size to change and then fires off the callback function
     window.addEventListener("resize", this.updateWidth);
   }
 
+  // This triggers right before the component is unmounted. It will remove the event listener
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateWidth);
   }
@@ -47,12 +50,19 @@ class Nav extends Component {
         >
           <span className="navbar-toggler-icon" />
         </button>
-        <div className={`${this.state.open ? "" : "collapse "}navbar-collapse`} id="navbarNav">
+        <div
+          className={`${this.state.open ? "" : "collapse "}navbar-collapse`}
+          id="navbarNav"
+        >
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link
                 onClick={this.toggleNav}
-                className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
+                className={
+                  window.location.pathname === "/"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
                 to="/"
               >
                 Search
@@ -61,7 +71,11 @@ class Nav extends Component {
             <li className="nav-item">
               <Link
                 onClick={this.toggleNav}
-                className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
+                className={
+                  window.location.pathname === "/saved"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
                 to="/saved"
               >
                 Saved

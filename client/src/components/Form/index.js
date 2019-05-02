@@ -1,5 +1,6 @@
 import React from "react";
 
+// handleInputChange is a call back function. We pass it in here so that we can update parent components.
 function Form({ q, handleInputChange, handleFormSubmit }) {
   return (
     <form>
